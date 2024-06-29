@@ -1,0 +1,92 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  background-color: #fff;
+  padding: 1rem 2.5rem;
+}
+
+h1 {
+  color: #1d3557;
+}
+
+.ph {
+  font-size: 1rem;
+}
+
+#input-container {
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 1rem;
+}
+
+input[type=text] {
+  width: 100%;
+  box-sizing: border-box;
+  border: 2px solid #457b9d;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  background-image: url("http://cliparts.co/cliparts/rTL/n8R/rTLn8RLBc.png") no-repeat;
+  background-position: 10px 10px;
+  padding: 12px 20px 12px 40px;
+}
+
+#search-button {
+  background-color: #457b9d;
+  border: none;
+  color: #f1faee;
+  padding: 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+#search-button:hover {
+  background-color: #1d3557;
+}
+
+#videos {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 2rem 0;
+  gap: 1.5rem;
+  justify-content: start;
+}
+
+#videos div {
+  max-width: 300px;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+#videos div h3 {
+  width: 300px;
+  font-size: 1.125rem;
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+#videos div button {
+  background-image: url("../assets/star.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+}
+
+/*# sourceMappingURL=style.css.map */
