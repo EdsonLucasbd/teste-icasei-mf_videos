@@ -35,9 +35,9 @@ input[type=text] {
 }
 
 #search-button {
-  background-color: #457b9d;
+  background-color: #1d3557;
   border: none;
-  color: #f1faee;
+  color: #fff;
   padding: 12px;
   text-align: center;
   text-decoration: none;
@@ -48,12 +48,11 @@ input[type=text] {
   border-radius: 4px;
   transition: all 0.3s ease;
 }
-
 #search-button:hover {
-  background-color: #1d3557;
+  background-color: #101e31;
 }
 
-#videos {
+#videos, #favorites {
   display: flex;
   flex-wrap: wrap;
   margin: 2rem 0;
@@ -61,7 +60,7 @@ input[type=text] {
   justify-content: start;
 }
 
-#videos div {
+#videos div, #favorites div {
   max-width: 300px;
   height: fit-content;
   display: flex;
@@ -69,7 +68,7 @@ input[type=text] {
   align-items: start;
 }
 
-#videos div h3 {
+#videos div h3, #favorites div h3 {
   width: 300px;
   font-size: 1.125rem;
   text-align: center;
@@ -80,13 +79,41 @@ input[type=text] {
 
 #videos div button {
   background-image: url("../assets/star.svg");
+  background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
   border: none;
   cursor: pointer;
+  width: 15px;
+  height: 15px;
+  padding: 0;
+}
+
+.star-button {
+  position: relative;
+  display: inline-block;
+  top: -40px;
+  left: 55%;
+}
+.star-button .star-checkbox {
+  display: none;
+}
+.star-button .star-checkbox:checked ~ .star-icon::before {
+  content: url("../assets/checkedStar.svg");
+}
+.star-button .star-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 30px;
   height: 30px;
-  padding: 0;
+  background-color: rgba(240, 240, 240, 0.4117647059);
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 20px;
+}
+.star-button .star-icon::before {
+  content: url("../assets/star.svg");
 }
 
 /*# sourceMappingURL=style.css.map */

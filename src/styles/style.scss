@@ -4,6 +4,26 @@ $auxiliary-color: #a8dadc;
 $accent-color: #e63946;
 $white: #f1faee;
 
+
+@mixin button-styles($background-color, $border-color, $text-color) {
+  background-color: $background-color;
+  border: none;
+  color: $text-color;
+  padding: 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: darken($background-color, 10%);
+  }
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -28,38 +48,25 @@ h1 {
   gap: 1rem;
 }
 
-input[type=text] {
+input[type='text'] {
   width: 100%;
   box-sizing: border-box;
   border: 2px solid $secondary-color;
   border-radius: 4px;
   font-size: 16px;
   background-color: white;
-  background-image: url('http://cliparts.co/cliparts/rTL/n8R/rTLn8RLBc.png') no-repeat;
-  background-position: 10px 10px; 
+  background-image: url('http://cliparts.co/cliparts/rTL/n8R/rTLn8RLBc.png')
+    no-repeat;
+  background-position: 10px 10px;
   padding: 12px 20px 12px 40px;
 }
 
 #search-button {
-  background-color: $secondary-color;
-  border: none;
-  color: $white;
-  padding: 12px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-  border-radius: 4px;
-  transition: all 0.3s ease;
+  @include button-styles($primary-color, none, #fff);
 }
 
-#search-button:hover {
-  background-color: $primary-color;
-}
 
-#videos {
+#videos, #favorites {
   display: flex;
   flex-wrap: wrap;
   margin: 2rem 0;
@@ -67,7 +74,7 @@ input[type=text] {
   justify-content: start;
 }
 
-#videos div {
+#videos div, #favorites div {
   max-width: 300px;
   height: fit-content;
   display: flex;
@@ -75,7 +82,7 @@ input[type=text] {
   align-items: start;
 }
 
-#videos div h3 {
+#videos div h3, #favorites div h3 {
   width: 300px;
   font-size: 1.125rem;
   text-align: center;
@@ -86,11 +93,43 @@ input[type=text] {
 
 #videos div button {
   background-image: url('../assets/star.svg');
+  background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
   border: none;
   cursor: pointer;
-  width: 30px;
-  height: 30px;
+  width: 15px;
+  height: 15px;
   padding: 0;
+}
+
+.star-button {
+  position: relative;
+  display: inline-block;
+  top: -40px;
+  left: 55%;
+
+  .star-checkbox {
+    display: none;
+    
+    &:checked ~ .star-icon::before {
+      content: url('../assets/checkedStar.svg');
+    }
+  }
+
+  .star-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    background-color: #f0f0f069;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+
+    &::before {
+      content: url('../assets/star.svg');
+    }
+  }
 }
