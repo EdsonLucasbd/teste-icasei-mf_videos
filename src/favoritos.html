@@ -1,31 +1,18 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <script src="../dist/index.js" type="application/javascript"></script>
     <title>Favoritos</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Vídeos Favoritos</h1>
     <div id="favorites"></div>
 
     <script>
-        async function loadFavorites() {
-            const response = await fetch('/mf_videos/favorites');
-            const favorites = await response.json();
-            const favoritesDiv = document.getElementById('favorites');
-            favoritesDiv.innerHTML = '';
-            favorites.forEach(video => {
-                const videoElement = document.createElement('div');
-                videoElement.innerHTML = `
-                    <h3>${video.title}</h3>
-                    <img src="${video.thumbnail}" alt="${video.title}">
-                `;
-                favoritesDiv.appendChild(videoElement);
-            });
-        }
-
-        window.onload = loadFavorites;
+      window.onload = loadFavorites()
     </script>
-</body>
+  </body>
 </html>
