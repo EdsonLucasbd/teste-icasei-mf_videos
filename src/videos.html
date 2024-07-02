@@ -1,24 +1,28 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="../css/style.css">
-  <script src="../dist/index.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-  <title>Vídeos</title>
-</head>
-<body>
-
-    <h1>Vídeos</h1> 
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <script src="../dist/index.js" type="application/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <title>Vídeos</title>
+  </head>
+  <body>
+    <h1>Vídeos</h1>
 
     <div id="input-container">
-        <input type="text" id="query" placeholder="Buscar por vídeos" aria-label="Digite o vídeo que deseja procurar.">
-        <button onclick="searchVideos()" id="search-button">Pesquisar</button>
+      <input
+        type="text"
+        id="query"
+        placeholder="Buscar por vídeos"
+        aria-label="Digite o vídeo que deseja procurar."
+      />
+      <button onclick="searchVideos()" id="search-button">Pesquisar</button>
     </div>
     <div id="videos"></div>
     <script>
-        feather.replace();
+      feather.replace()
     </script>
-</body>
+  </body>
 </html>
